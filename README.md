@@ -1,6 +1,6 @@
 # Estimating the Movement of Charged Particle Near the Superconductor <br>
 ## I. Setting Up Differential Equations <br>
-To get the force acting on a charge we will use method of images, as described in Yang, Z. J. Focusing a charged-particle beam by a superconductor, 1996.<br>
+To get the force acting on a charge we will use method of images [1].<br>
 - For a **moving charge q**, its vertically flipped image (assuming plane of Superconductor is aligned at **y=0**) is constructed, with the charge **-q**, as shown in the figure below. <br>
 ![image](/figures/figure1.png)<br>
 - From that image, Induced Magnetic Field **B**, and hence the **Lorentz Force** acting on a particle can be determined:<br>
@@ -21,7 +21,7 @@ From that, it is technically possible to numerically solve the position over tim
 In order to avoid some values being inherently large (like speed and acceleration) while others are inherently tiny (like position), we should scale them by some characteristic value. <br>
 - To keep values close to 1, velocities have been characterized by the **speed of light**, while positions by the **distance of closest approach** calculated for **Non-Relativistic** case. <br>
 ![image](/figures/Nondimensionalisation.png) <br>
-- The formula for **distance of closest approach** calculated in **Non-Relativistic** case has been derived in the original paper. <br>
+- The formula for **distance of closest approach** calculated in **Non-Relativistic** case can be derived from the **Lorentz Force** and the fact that the Magnetic Field doesn't do any work. <br>
 ![image](/figures/MinApproachDistance.png) <br>
 - From that, nondimensionalised accelerations can be derived, and constants grouped together. <br>
 ![image](/figures/NondimensionalisedAccelerations.png) <br>
@@ -65,6 +65,9 @@ It is worth noting that function used to approximate Time Difference always unde
 ## VI. Conclusion <br>
 This simulation lets us conclude that the original formula for determining distance of closest approach in **Non-Relativistic** case does work and can give a good reference value. But taking **Relativity** into account, particles get closer to SC than it estimates, **minimum approach distance** does in fact depend on **particle's velocity** and can follow **asymetric trajectory** given the effect of **Time Retardation**.<br>
 Please reference [main_notebook.ipynb](/main_notebook.ipynb) for the implementation. It also features cells for setting custom particle parameters and drawing these plots.
+
+## References <br>
+[1] Yang, Z. (1994). Focusing a charged-particle beam by a superconductor. Physica. C, Superconductivity, 230(3–4), 419–424. https://doi.org/10.1016/0921-4534(94)90860-5
 
 
 
